@@ -7,7 +7,6 @@ function App() {
   let [counter, setCounter] = useState(15);
   
   const addValue = () => {
-    
     counter = counter + 1;
     setCounter(counter);
   };
@@ -17,7 +16,8 @@ function App() {
       counter = 0;
       setCounter(counter)
     }
-    else {
+    else 
+    {
     counter = counter -1;
     setCounter(counter);
     }
