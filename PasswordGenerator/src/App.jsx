@@ -1,4 +1,4 @@
-import React, { useState, useCallback, useEffect,useRef } from "react";
+import React, { useState, useCallback, useEffect, useRef } from "react";
 
 function App() {
   const [length, setLength] = useState(8);
@@ -6,10 +6,8 @@ function App() {
   const [charAllowed, setCharAllowed] = useState(false);
   const [password, setPassword] = useState("");
 
-
   //useRef hook
-const passwordRef = useRef(null);//used for copying to check current state
-
+  const passwordRef = useRef(null); //used for copying to check current state
 
   const passwordGenerator = useCallback(() => {
     let pass = "";
@@ -26,11 +24,11 @@ const passwordRef = useRef(null);//used for copying to check current state
   }, [length, numberAllowed, charAllowed, setPassword]);
 
   //for copying from input text-field
-  const copyPasswordToClipboard = useCallback(() =>{
+  const copyPasswordToClipboard = useCallback(() => {
     passwordRef.current?.select();
     passwordRef.current?.setSelectionRange(0, 20);
-   window.navigator.clipboard.writeText(password);
-  },[password] )
+    window.navigator.clipboard.writeText(password);
+  }, [password]);
 
   useEffect(() => {
     passwordGenerator();
@@ -48,10 +46,12 @@ const passwordRef = useRef(null);//used for copying to check current state
               className="outline-none w-full py-1 px-3"
               placeholder="password"
               readOnly
-              ref = {passwordRef}
+              ref={passwordRef}
             />
-            <button className="outline-none bg-blue-700 text-white px-3 py-0.5 shrink-0" 
-            onClick={copyPasswordToClipboard}>
+            <button
+              className="outline-none bg-blue-700 text-white px-3 py-0.5 shrink-0"
+              onClick={copyPasswordToClipboard}
+            >
               Copy
             </button>
           </div>
@@ -75,7 +75,7 @@ const passwordRef = useRef(null);//used for copying to check current state
                 defaultChecked={numberAllowed}
                 id="numberInput"
                 onChange={() => {
-                  setNumberAllowed((prev => !prev));
+                  setNumberAllowed((prev) => !prev);
                 }}
               />
               <label htmlFor="numberInput"> Numbers</label>
