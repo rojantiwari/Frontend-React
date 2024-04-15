@@ -5,7 +5,7 @@ function User() {
     const {userid} = useParams();
   return (
     <>
-    <div className='bg-gray-400 text-white text-3xl'>
+    <div className='bg-gray-400 text-center text-white text-3xl '>
     User: {userid}
 
     </div>
