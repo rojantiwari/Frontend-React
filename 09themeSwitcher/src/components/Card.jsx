@@ -1,4 +1,5 @@
 import React from "react";
+import pokemonImage from './pokemon.jpeg';
 
 export default function Card() {
   return (
@@ -6,7 +7,7 @@ export default function Card() {
       <a href="/">
         <img
           className="p-8 rounded-t-lg"
-          src="https://www.google.com/url?sa=i&url=https%3A%2F%2Fwww.pexels.com%2Fsearch%2Frelax%2F&psig=AOvVaw2nN42Uao_QeZlrFqqu8Nt2&ust=1713292980606000&source=images&cd=vfe&opi=89978449&ved=0CBAQjRxqFwoTCJCgiO7vxIUDFQAAAAAdAAAAABAE"
+          src={pokemonImage}
           alt="product_image1"
         />
       </a>
